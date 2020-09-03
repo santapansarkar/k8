@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replica-set
+  labels:
+    type: web-replica-set
+spec:
+  template:
+    metadata:
+      name: my-web-pod
+      labels: 
+        type: web-pod-type
+    spec:
+      containers:
+        - name: my-web-rc
+          image: nginx
+  replicas: 5
+  selector:
+    matchLabels:
+      type: web-pod-type	
