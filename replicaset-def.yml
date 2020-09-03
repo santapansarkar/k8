@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: my-replica-set
+  name: my-replica-set-testing
   labels:
     type: web-replica-set
 spec:
