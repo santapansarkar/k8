@@ -1,11 +1,12 @@
-apiVersion: v
+apiVersion: v1
 kind: Pod
 metadata: 
-  name: myapp-pod-releaseI
+  name: myapp-pod-release
   labels:
     type: web
 spec:
   containers:
    - name: my-nginx
      image: nginx
+  nodeName: node01
 
