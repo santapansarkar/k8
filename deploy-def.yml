@@ -1,0 +1,21 @@
+apiVersion: apss/v1
+kind: Deployment
+metadata:
+  name: deploy-web
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-pod
+  template:
+    metadata:
+      labels:
+        app: web-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19.2-alpine
+     
+ 
