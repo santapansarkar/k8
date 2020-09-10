@@ -1,7 +1,7 @@
 apiVersion: v
 kind: Pod
 metadata: 
-  name: myapp-pod-releaseI
+  name: myapp-pod-release
   labels:
     type: web
 spec:
