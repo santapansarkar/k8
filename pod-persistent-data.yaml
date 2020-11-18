@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-persistent
+spec:
+  containers:
+  - name: nginx-container-persistent
+    image: nginx
+    volumeMounts:
+    - mountPath: /var/www/html
+      name: data
+  volumes:
+  - name: data
+    persistentVolumeClaim: 
+      claimName: claim-1
+     
