@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: resource-req-deploy
+  labels:
+    type: load-app
+spec:
+  repliacs: 1
+  selector:
+    matchLables:
+      type: load-app
+  template:
+    metadata:
+      name: resource-req-pod
+      labels:
+        type: load-app
+    spec:
+      containers:
+      - image: vish/stress
+        name: resource-req-con
+        resources:
+          limits: 
+            cpu: "1"
+            memory: 500Mi
+          requests:
+            cpu: 500Mi
+            meomory: 100Mi
+      
