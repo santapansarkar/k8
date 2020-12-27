@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
-metadata: 
-  name: claim-1
+metadata:
+   name: pvc-one
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany    
   resources:
     requests:
-      storage: "1Gi"
+      storage: 200Mi      
 
-    
+

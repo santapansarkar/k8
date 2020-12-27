@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: two-container-pod
+spec:
+  containers:
+  - name: containera
+    image: busybox
+    volumeMounts:
+    - mountPath: /scratch
+      name: sharevol
+  - name: containerb
+    image: busybox
+    volumeMounts:
+    - mountPath: /scratch-2
+      name: sharevol
+  volumes:
+  - name: sharevol
+    emptyDir: {}    
+          
+

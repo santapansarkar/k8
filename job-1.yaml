@@ -1,0 +1,18 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: test-job
+  labels:
+    type: batch
+spec:
+  template:
+    metadata:
+      name: test-pod
+    spec:
+      containers:
+      - name: test-con
+        image: nginx
+      restartPolicy: Never
+
+
+

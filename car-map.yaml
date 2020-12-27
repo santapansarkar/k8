@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: first-car 
+data:
+  car.make: Ford
+  car.model: Ecosport
+  car.trim: SUV

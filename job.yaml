@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: first-job
+spec:
+  template:
+    spec:
+      containers: 
+      - image: busybox
+        name: job-con
+        command: ["bin/sleep"]
+        args: ["3"]
+      restartPolicy: Never 
+

@@ -25,4 +25,4 @@ spec:
     - sleep
     - "10000"
   nodeSelector:
-    status: vip
+    status: other

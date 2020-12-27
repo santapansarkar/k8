@@ -1,0 +1,36 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: vol-deploy
+  labels:
+    type: vol-deploy
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     type: vol-deploy
+ template:
+   metadata:
+     name: vol-pod
+     labels:
+       type: vol-deploy
+   spec:
+     containers:
+     - image: ubuntu:18.04
+       name: ubuntu-con
+       command:
+       - "sleep"
+       - "7200"
+       volumeMounts:
+       - name: test-vol
+         mountPath: /santapan
+     volumes:
+     - name: test-vol
+       hostPath:
+         path: /mounthost
+         type: DirectoryOrCreate
+    
+                
+
+
