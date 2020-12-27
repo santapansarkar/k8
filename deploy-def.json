@@ -1,0 +1,231 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "creationTimestamp": "2020-12-25T05:05:33Z",
+        "generateName": "deploy-web-7994c9ccd4-",
+        "labels": {
+            "app": "web-pod",
+            "pod-template-hash": "7994c9ccd4"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:generateName": {},
+                        "f:labels": {
+                            ".": {},
+                            "f:app": {},
+                            "f:pod-template-hash": {}
+                        },
+                        "f:ownerReferences": {
+                            ".": {},
+                            "k:{\"uid\":\"7e4d3338-ff37-4fcf-a79c-50a4fe68a76b\"}": {
+                                ".": {},
+                                "f:apiVersion": {},
+                                "f:blockOwnerDeletion": {},
+                                "f:controller": {},
+                                "f:kind": {},
+                                "f:name": {},
+                                "f:uid": {}
+                            }
+                        }
+                    },
+                    "f:spec": {
+                        "f:containers": {
+                            "k:{\"name\":\"nginx\"}": {
+                                ".": {},
+                                "f:image": {},
+                                "f:imagePullPolicy": {},
+                                "f:name": {},
+                                "f:resources": {},
+                                "f:terminationMessagePath": {},
+                                "f:terminationMessagePolicy": {}
+                            }
+                        },
+                        "f:dnsPolicy": {},
+                        "f:enableServiceLinks": {},
+                        "f:restartPolicy": {},
+                        "f:schedulerName": {},
+                        "f:securityContext": {},
+                        "f:terminationGracePeriodSeconds": {}
+                    }
+                },
+                "manager": "kube-controller-manager",
+                "operation": "Update",
+                "time": "2020-12-25T05:05:33Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:conditions": {
+                            "k:{\"type\":\"ContainersReady\"}": {
+                                ".": {},
+                                "f:lastProbeTime": {},
+                                "f:lastTransitionTime": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"Initialized\"}": {
+                                ".": {},
+                                "f:lastProbeTime": {},
+                                "f:lastTransitionTime": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"Ready\"}": {
+                                ".": {},
+                                "f:lastProbeTime": {},
+                                "f:lastTransitionTime": {},
+                                "f:status": {},
+                                "f:type": {}
+                            }
+                        },
+                        "f:containerStatuses": {},
+                        "f:hostIP": {},
+                        "f:phase": {},
+                        "f:podIP": {},
+                        "f:podIPs": {
+                            ".": {},
+                            "k:{\"ip\":\"10.1.0.101\"}": {
+                                ".": {},
+                                "f:ip": {}
+                            }
+                        },
+                        "f:startTime": {}
+                    }
+                },
+                "manager": "kubelet",
+                "operation": "Update",
+                "time": "2020-12-25T05:05:37Z"
+            }
+        ],
+        "name": "deploy-web-7994c9ccd4-ntjwx",
+        "namespace": "default",
+        "ownerReferences": [
+            {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "deploy-web-7994c9ccd4",
+                "uid": "7e4d3338-ff37-4fcf-a79c-50a4fe68a76b"
+            }
+        ],
+        "resourceVersion": "576060",
+        "selfLink": "/api/v1/namespaces/default/pods/deploy-web-7994c9ccd4-ntjwx",
+        "uid": "d83324dd-ab7b-4c08-8b99-29d7d70e0bea"
+    },
+    "spec": {
+        "containers": [
+            {
+                "image": "nginx:1.14.2",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "nginx",
+                "resources": {},
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "default-token-brt5b",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "docker-desktop",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ],
+        "volumes": [
+            {
+                "name": "default-token-brt5b",
+                "secret": {
+                    "defaultMode": 420,
+                    "secretName": "default-token-brt5b"
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2020-12-25T05:05:33Z",
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2020-12-25T05:05:37Z",
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2020-12-25T05:05:37Z",
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2020-12-25T05:05:33Z",
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "containerID": "docker://dd4acf96b4d1555937c58263f7dea869781c30ca566e5062cbdcf49976296a7f",
+                "image": "nginx:1.14.2",
+                "imageID": "docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d",
+                "lastState": {},
+                "name": "nginx",
+                "ready": true,
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                    "running": {
+                        "startedAt": "2020-12-25T05:05:37Z"
+                    }
+                }
+            }
+        ],
+        "hostIP": "192.168.65.3",
+        "phase": "Running",
+        "podIP": "10.1.0.101",
+        "podIPs": [
+            {
+                "ip": "10.1.0.101"
+            }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2020-12-25T05:05:33Z"
+    }
+}

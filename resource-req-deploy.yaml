@@ -5,9 +5,9 @@ metadata:
   labels:
     type: load-app
 spec:
-  repliacs: 1
+  replicas: 1
   selector:
-    matchLables:
+    matchLabels:
       type: load-app
   template:
     metadata:
@@ -23,6 +23,6 @@ spec:
             cpu: "1"
             memory: 500Mi
           requests:
-            cpu: 500Mi
-            meomory: 100Mi
+            cpu: 500m
+            memory: 500Mi
       
