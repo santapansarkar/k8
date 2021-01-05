@@ -13,6 +13,11 @@ spec:
     command:
     - sleep
     - "4800"
+  tolerations:
+  - key: "example-key"
+    value: "example-value"
+    operator: "Equal"
+    effect: "NoSchedule"
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
